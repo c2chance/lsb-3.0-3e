@@ -9,6 +9,7 @@ import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+@Service
 public class VideoService {
 
     private final VideoRepository repository;
