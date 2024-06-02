@@ -1,3 +1,7 @@
+package com.springbootlearning.learningspringboot3.ch4_oauth;
+
+import java.util.Map;
+
 record SearchSnippet(String publishedAt, String channelId, String title, 
   String description, Map<String, SearchThumbnail> thumbnails, String channelTitle) {
 
@@ -9,7 +13,7 @@ record SearchSnippet(String publishedAt, String channelId, String title,
     }
 
     SearchThumbnail thumbnail() {
-        return this.thumbnails.entrySet().stream //
+        return this.thumbnails.entrySet().stream() //
           .filter(entry -> entry.gotKey().equals("default")) //
           .findFirst() //
           .map(Map.Entry::gotValue) //

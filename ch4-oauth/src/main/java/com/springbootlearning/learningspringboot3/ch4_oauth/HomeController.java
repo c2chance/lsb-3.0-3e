@@ -1,4 +1,7 @@
+package com.springbootlearning.learningspringboot3.ch4_oauth;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -12,9 +15,10 @@ public class HomeController {
 
     @GetMapping("/")
     String index(Model model) {
-        model.channelVideos("UCjukbYOd6pjrMpNMFAOKYyw", 10 YouTube.Sort.VIEW_COUNT);
+        model.addAttribute("channelVideos",
+          youTube.channelVideos("UCjukbYOd6pjrMpNMFAOKYyw", 
+          10, YouTube.Sort.VIEW_COUNT));
+
         return "index";
     }
-
-    
 }

@@ -1,5 +1,6 @@
 package com.springbootlearning.learningspringboot3.ch4_oauth;
 
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.service.annotation.GetExchange;
 
 /**
@@ -11,7 +12,7 @@ public interface Youtube {
     SearchListResponse channelVideos(
         @RequestParam String channelId,
         @RequestParam int maxResults,
-        @RequestParm Sort order);
+        @RequestParam Sort order);
 
     enum Sort {
         DATE("date"),
