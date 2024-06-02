@@ -2,5 +2,6 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "spring.initializr.serviceUrl": [
         "https://start.spring.io"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
