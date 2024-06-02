@@ -6,7 +6,7 @@ import org.springframework.web.service.annotation.GetExchange;
 /**
  * Youtube
  */
-public interface Youtube {
+interface YouTube {
 
     @GetExchange("/search?part=snippet&type=video")
     SearchListResponse channelVideos(
