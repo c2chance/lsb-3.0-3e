@@ -102,7 +102,7 @@ public class UserAccount {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + "username=" + '\'' + ", password='" + password + '\'' + ", authorities="
+        return "User{" + "id=" + id + "username='" + '\'' + ", password='" + password + '\'' + ", authorities="
                 + authorities + '}';
     }
 }

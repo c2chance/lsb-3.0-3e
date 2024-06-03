@@ -1,14 +1,13 @@
 <h1>Greetings Learning Spring Boot 3.0 fans!</h1>
 
 <p>
-    In this chpter, we are learning how to make
+    In this chapter, we are learning how to make
     a web app using Spring Boot 3.0
 </p>
 
 <h3>User Profile</h3>
-
 <ul>
-    <li>Username: {{authtication.name}}</li>
+    <li>Username: {{authentication.name}}</li>
     <li>Authorities: {{authentication.authorities}}</li>
 </ul>
 
@@ -20,7 +19,7 @@
 <hr>
 
 <form action="/search" method="post">
-    <label for="value">Search</label>
+    <label for="value">Search:</label>
     <input type="text" name="value">
     <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
     <button type="submit">Search</button>

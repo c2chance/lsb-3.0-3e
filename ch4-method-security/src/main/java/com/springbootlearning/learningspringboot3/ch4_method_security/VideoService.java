@@ -50,7 +50,7 @@ public class VideoService {
 
     @PostConstruct
     void initDatabase() {
-        repository.save(new VideoEntity("alice", "Need Help with your SPRING BOOOT 3 APP?", 
+        repository.save(new VideoEntity("alice", "Need Help with your SPRING BOOT 3 APP?",
           "SPRING BOOT 3 will only speed this up and make it super SIMPLE to serve template and raw data."));
         repository.save(new VideoEntity("alice", "Don't do THIS to your own CODE!",
           "As a pro developer, never ever EVER do this to your code. Because you'll ultimately by doing it to YOURSELF"));
