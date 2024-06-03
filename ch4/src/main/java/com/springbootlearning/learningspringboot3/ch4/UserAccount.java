@@ -16,6 +16,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
+@Entity
 public class UserAccount {
     
     @Id
@@ -89,7 +90,8 @@ public class UserAccount {
 
         UserAccount user = (UserAccount)o;
 
-        return Objects.equals(id, user.id) && Objects.equals(authorities, user.authorities);
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username)
+          && Objects.equals(password, user.password) && Objects.equals(authorities, user.authorities);
     }
 
     @Override
@@ -102,5 +104,4 @@ public class UserAccount {
         return "User{" + "id=" + id + ", username='" + username + '\'' + ", password='" + '\'' + ", authorities="
           + authorities + '}';
     }
-
 }

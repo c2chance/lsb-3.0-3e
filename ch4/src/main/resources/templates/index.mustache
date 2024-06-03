@@ -20,7 +20,7 @@
     {{#videos}}
         <li>
             {{name}}
-            <form action="/delete/videos/{{id}} method="post">
+            <form action="/delete/videos/{{id}}" method="post">
                 <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
                 <button type="submit">Delete</button>
             </form>
@@ -30,7 +30,7 @@
     <form action="/new-video" method="post">
         <input type="text" name="name">
         <input type="text" name="description">
-        <input type="hidden" name="{{_csrf.parameterName}}" value="_csrf.token">
+        <input type="hidden" name="{{_csrf.parameterName}}" value="{{_csrf.token}}">
         <button type="submit">Delete</button>
     </form>
 </ul>
