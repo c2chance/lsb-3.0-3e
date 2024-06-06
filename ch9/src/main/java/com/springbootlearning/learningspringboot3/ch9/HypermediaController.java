@@ -24,10 +24,10 @@ public class HypermediaController {
 
     @GetMapping("/hypermedia/employees/{key}")
     Mono<EntityModel<Employee>> employee(@PathVariable String key) {
-        Mono<Link> selfLink = linkTo(
-            methodOn(HypermediaController.class)
-              .employee(key))
-                .withSelfRef()
+        Mono<Link> selfLink = linkTo( // 
+            methodOn(HypermediaController.class) //
+              .employee(key)) //
+                .withSelfRef() //
                 .toMono();
 
         Mono<Link> aggregateRoot = linkTo(
@@ -42,14 +42,15 @@ public class HypermediaController {
     }
 
     @GetMapping("/hypermedia/employees")
-    Mono<CollectionModel<EntityModel<Employ>>> employees() {
+    Mono<CollectionModel<EntityModel<Employee>>> employees() {
         Mono<Link> selfLink = linkTo(
             methodOn(HypermediaController.class)
               .employees())
                 .withSelfRel()
                 .toMono();
 
-        return selfLink.flatMap(self -> Flux.fromIterable(DATABASE.keySet())
+      return selfLink.flatMap(self -> Flux.fromIterable(DATABASE.keySet())
+          .flatMap(key -> employee(key))
           .collectList()
           .map(entityModels -> CollectionModel.of(entityModels, self)));
     }

@@ -1,5 +1,7 @@
 package com.springbootlearning.learningspringboot3.ch9;
 
+import static com.springbootlearning.learningspringboot3.ch9.ApiController.DATABASE;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -15,5 +17,4 @@ public class Startup {
             DATABASE.put("Bilbo Baggis", new Employee("Bilbo Baggins", "burglar"));
         };
     }
-    
 }

@@ -2,5 +2,17 @@
     <head>
         <title>Write a Reactive Web Controller</title>
     </head>
-    <body></body>
+    <body>
+        <h2>Employees</h2>
+        <ul>
+            <li th:each="ëmployee : ${employees}">
+                <div th:text="${employee.name + ' (' + employee.role + ')'}"></div>
+            </li>
+        </ul>
+        <form th:action="@{/new-employee}" th:object="${newEmployee}" method="post">
+            <input type="text" th:field="*{name}"/>
+            <input type="text" th:field="*{role}"/>
+            <input type="submit"/>
+        </form>
+    </body>
 </html>

@@ -17,7 +17,7 @@ public class HomeController {
     Mono<Rendering> index() {
         return Flux.fromIterable(DATABASE.values())
           .collectList()
-          .map(employee -> Rendering
+          .map(employees -> Rendering
             .view("index")
             .modelAttribute("employees", employees)
             .modelAttribute("newEmployee", new Employee("", ""))
