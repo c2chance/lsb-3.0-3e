@@ -18,6 +18,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+// @RestController, Spring Web annotation, 用于将此控制器标记为专注于 JSON 序列化而不是模版显示
+// @EnableHypermediaSupport, Spring HATEOAS annotation, 用于激活超媒体支持, 本例为 HAL support
+//   如果使用 Spring Boot Starter HATEOAS, 则 HAL 支持将自动激活. 如果式手动插入 Spring HATEOAS, 必须自己激活
+//
+// @GetMapping, HTTP GET/hypermedia/employee/{key} 方法
+// 返回类型是 Mono<EntityModel<Employee>>
 @RestController
 @EnableHypermediaSupport(type = HAL)
 public class HypermediaController {
